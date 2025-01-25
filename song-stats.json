@@ -1,8 +1,9 @@
 {
-    "total": 5,
+    "total": 6,
     "paid": 2,
-    "free": 3,
+    "free": 4,
     "genres": {
-        "流行": 5
+        "流行": 5,
+        "Rap": 1
     }
 }
