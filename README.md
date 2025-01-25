@@ -15,6 +15,8 @@
 - `is_paid`: 是否为付费歌曲
 - `order`: 歌曲排序序号（从1开始的整数）
 
+URL: https://raw.githubusercontent.com/Akuma-real/gugu-music-list/refs/heads/main/all.json
+
 ### song-stats.json
 
 这是一个自动生成的统计文件，当 all.json 更新时会自动更新。包含以下统计信息：
@@ -24,11 +26,25 @@
 - `free`: 免费歌曲数量
 - `genres`: 各个流派的歌曲数量统计
 
+URL: https://raw.githubusercontent.com/Akuma-real/gugu-music-list/refs/heads/main/song-stats.json
+
+### song-genre-all.json
+
+按照 order 字段排序的所有歌曲列表。
+
+URL: https://raw.githubusercontent.com/Akuma-real/gugu-music-list/refs/heads/main/song-genre-all.json
+
+### song-genre-[曲风].json
+
+按照曲风分类并排序的歌曲列表。目前包含：
+
+- 流行: https://raw.githubusercontent.com/Akuma-real/gugu-music-list/refs/heads/main/song-genre-流行.json
+
 ## 自动化功能
 
 本项目使用 GitHub Actions 实现了自动化统计功能：
 
-- 当 all.json 文件发生变化时，会自动更新 song-stats.json
+- 当 all.json 文件发生变化时，会自动更新所有统计文件
 - 统计数据会自动提交到仓库中
 - 无需手动维护统计数据
 
