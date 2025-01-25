@@ -52,6 +52,12 @@ jobs:
           // 2. 生成全部歌曲排序文件
           fs.writeFileSync("song-all.json", JSON.stringify(sortedSongs, null, 4));
           '
+
+      # 保存生成的文件到临时目录
+      - name: Save generated files
+        run: |
+          mkdir -p /tmp/song-files
+          cp all.json song-stats.json song-all.json /tmp/song-files/
           
       - name: Config Git
         run: |
@@ -66,10 +72,8 @@ jobs:
           
       - name: Copy and commit files
         run: |
-          # 复制需要的文件
-          cp ../all.json .
-          cp ../song-stats.json .
-          cp ../song-all.json .
+          # 从临时目录复制文件
+          cp /tmp/song-files/* .
           
           # 提交更改
           git add all.json song-stats.json song-all.json
