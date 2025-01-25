@@ -28,17 +28,11 @@ URL: https://raw.githubusercontent.com/Akuma-real/gugu-music-list/refs/heads/mai
 
 URL: https://raw.githubusercontent.com/Akuma-real/gugu-music-list/refs/heads/main/song-stats.json
 
-### song-genre-all.json
+### song-all.json
 
 按照 order 字段排序的所有歌曲列表。
 
-URL: https://raw.githubusercontent.com/Akuma-real/gugu-music-list/refs/heads/main/song-genre-all.json
-
-### song-genre-[曲风].json
-
-按照曲风分类并排序的歌曲列表。目前包含：
-
-- 流行: https://raw.githubusercontent.com/Akuma-real/gugu-music-list/refs/heads/main/song-genre-流行.json
+URL: https://raw.githubusercontent.com/Akuma-real/gugu-music-list/refs/heads/main/song-all.json
 
 ## 自动化功能
 

@@ -43,18 +43,12 @@ jobs:
           fs.writeFileSync("song-stats.json", JSON.stringify(count, null, 4));
           
           // 2. 生成全部歌曲排序文件
-          fs.writeFileSync("song-genre-all.json", JSON.stringify(sortedSongs, null, 4));
-          
-          // 3. 为每个流派生成单独的文件
-          Object.keys(count.genres).forEach(genre => {
-            const genreSongs = sortedSongs.filter(song => song.genre === genre);
-            fs.writeFileSync(`song-genre-${genre}.json`, JSON.stringify(genreSongs, null, 4));
-          });
+          fs.writeFileSync("song-all.json", JSON.stringify(sortedSongs, null, 4));
           '
           
       - name: Commit and push if changed
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add song-stats.json song-genre-*.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "更新歌曲统计数据和分类文件" && git push) 
+          git add song-stats.json song-all.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "更新歌曲统计数据" && git push) 
