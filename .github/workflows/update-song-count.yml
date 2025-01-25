@@ -1,0 +1,45 @@
+name: Update Song Count
+
+on:
+  push:
+    paths:
+      - 'all.json'
+
+jobs:
+  update-count:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Create song count file
+        run: |
+          node -e '
+          const fs = require("fs");
+          const songs = JSON.parse(fs.readFileSync("all.json", "utf8"));
+          const count = {
+            total: songs.length,
+            paid: songs.filter(song => song.is_paid).length,
+            free: songs.filter(song => !song.is_paid).length,
+            genres: {}
+          };
+          
+          // 统计每个流派的数量
+          songs.forEach(song => {
+            count.genres[song.genre] = (count.genres[song.genre] || 0) + 1;
+          });
+          
+          fs.writeFileSync("song-stats.json", JSON.stringify(count, null, 4));
+          '
+          
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add song-stats.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "更新歌曲统计数据" && git push) 

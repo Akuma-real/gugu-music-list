@@ -1,0 +1,30 @@
+[
+    {
+        "title": "喂猪",
+        "artist": "胡艾彤",
+        "genre": "流行",
+        "notes": "喂猪",
+        "is_paid": false
+    },
+    {
+        "title": "成分复杂",
+        "artist": "JarStick/新秀",
+        "genre": "说唱",
+        "notes": "",
+        "is_paid": true
+    },
+    {
+        "title": "说好不哭",
+        "artist": "周杰伦",
+        "genre": "流行",
+        "notes": "EMO",
+        "is_paid": true
+    },
+    {
+        "title": "说好不哭",
+        "artist": "周杰伦",
+        "genre": "流行",
+        "notes": "EMO",
+        "is_paid": true
+    }
+] 
