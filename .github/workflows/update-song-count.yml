@@ -1,9 +1,14 @@
 name: Update Song Count
 
 on:
+  # 手动触发
+  workflow_dispatch:
+  # 当 all.json 更改时触发
   push:
     paths:
       - 'all.json'
+    branches:
+      - main
 
 jobs:
   update-count:
@@ -11,6 +16,8 @@ jobs:
     
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main  # 从 main 分支检出代码
       
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -46,9 +53,24 @@ jobs:
           fs.writeFileSync("song-all.json", JSON.stringify(sortedSongs, null, 4));
           '
           
-      - name: Commit and push if changed
+      - name: Config Git
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add song-stats.json song-all.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "更新歌曲统计数据" && git push) 
+      
+      - name: Switch to data branch
+        run: |
+          git fetch origin
+          git checkout data 2>/dev/null || git checkout -b data
+          git reset --hard origin/data || true
+          
+      - name: Copy and commit files
+        run: |
+          # 复制需要的文件
+          cp ../all.json .
+          cp ../song-stats.json .
+          cp ../song-all.json .
+          
+          # 提交更改
+          git add all.json song-stats.json song-all.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "更新歌曲统计数据" && git push origin data) 

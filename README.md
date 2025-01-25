@@ -15,7 +15,7 @@
 - `is_paid`: 是否为付费歌曲
 - `order`: 歌曲排序序号（从1开始的整数）
 
-URL: https://raw.githubusercontent.com/Akuma-real/gugu-music-list/refs/heads/main/all.json
+URL: https://raw.githubusercontent.com/Akuma-real/gugu-music-list/data/all.json
 
 ### song-stats.json
 
@@ -26,13 +26,13 @@ URL: https://raw.githubusercontent.com/Akuma-real/gugu-music-list/refs/heads/mai
 - `free`: 免费歌曲数量
 - `genres`: 各个流派的歌曲数量统计
 
-URL: https://raw.githubusercontent.com/Akuma-real/gugu-music-list/refs/heads/main/song-stats.json
+URL: https://raw.githubusercontent.com/Akuma-real/gugu-music-list/data/song-stats.json
 
 ### song-all.json
 
 按照 order 字段排序的所有歌曲列表。
 
-URL: https://raw.githubusercontent.com/Akuma-real/gugu-music-list/refs/heads/main/song-all.json
+URL: https://raw.githubusercontent.com/Akuma-real/gugu-music-list/data/song-all.json
 
 ## 自动化功能
 
