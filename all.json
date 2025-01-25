@@ -4,34 +4,39 @@
         "artist": "TFBOYS",
         "genre": "流行",
         "notes": "甜甜嘟",
-        "is_paid": false
+        "is_paid": false,
+        "order": 1
     },
     {
         "title": "喂猪",
         "artist": "胡艾彤",
         "genre": "流行",
         "notes": "太高夹不住",
-        "is_paid": false
+        "is_paid": false,
+        "order": 2
     },
     {
         "title": "素颜",
         "artist": "许嵩/何曼婷",
         "genre": "流行",
         "notes": "just so so",
-        "is_paid": false
+        "is_paid": false,
+        "order": 3
     },
     {
         "title": "东西",
         "artist": "林俊呈",
         "genre": "流行",
         "notes": "甜甜嘟",
-        "is_paid": true
+        "is_paid": true,
+        "order": 4
     },
     {
         "title": "说好不哭",
         "artist": "周杰伦",
         "genre": "流行",
         "notes": "Emo",
-        "is_paid": true
+        "is_paid": true,
+        "order": 5
     }
 ] 

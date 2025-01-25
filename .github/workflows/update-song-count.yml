@@ -17,11 +17,16 @@ jobs:
         with:
           node-version: '18'
           
-      - name: Create song count file
+      - name: Create song statistics files
         run: |
           node -e '
           const fs = require("fs");
           const songs = JSON.parse(fs.readFileSync("all.json", "utf8"));
+          
+          // 按 order 排序所有歌曲
+          const sortedSongs = [...songs].sort((a, b) => a.order - b.order);
+          
+          // 1. 生成统计数据
           const count = {
             total: songs.length,
             paid: songs.filter(song => song.is_paid).length,
@@ -34,12 +39,22 @@ jobs:
             count.genres[song.genre] = (count.genres[song.genre] || 0) + 1;
           });
           
+          // 写入统计数据
           fs.writeFileSync("song-stats.json", JSON.stringify(count, null, 4));
+          
+          // 2. 生成全部歌曲排序文件
+          fs.writeFileSync("song-genre-all.json", JSON.stringify(sortedSongs, null, 4));
+          
+          // 3. 为每个流派生成单独的文件
+          Object.keys(count.genres).forEach(genre => {
+            const genreSongs = sortedSongs.filter(song => song.genre === genre);
+            fs.writeFileSync(`song-genre-${genre}.json`, JSON.stringify(genreSongs, null, 4));
+          });
           '
           
       - name: Commit and push if changed
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add song-stats.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "更新歌曲统计数据" && git push) 
+          git add song-stats.json song-genre-*.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "更新歌曲统计数据和分类文件" && git push) 
