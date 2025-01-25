@@ -1,30 +1,37 @@
 [
     {
-        "title": "喂猪",
-        "artist": "胡艾彤",
+        "title": "宠爱",
+        "artist": "TFBOYS",
         "genre": "流行",
-        "notes": "喂猪",
+        "notes": "甜甜嘟",
         "is_paid": false
     },
     {
-        "title": "成分复杂",
-        "artist": "JarStick/新秀",
-        "genre": "说唱",
-        "notes": "",
+        "title": "喂猪",
+        "artist": "胡艾彤",
+        "genre": "流行",
+        "notes": "太高夹不住",
+        "is_paid": false
+    },
+    {
+        "title": "素颜",
+        "artist": "许嵩/何曼婷",
+        "genre": "流行",
+        "notes": "just so so",
+        "is_paid": false
+    },
+    {
+        "title": "东西",
+        "artist": "林俊呈",
+        "genre": "流行",
+        "notes": "甜甜嘟",
         "is_paid": true
     },
     {
         "title": "说好不哭",
         "artist": "周杰伦",
         "genre": "流行",
-        "notes": "EMO",
-        "is_paid": true
-    },
-    {
-        "title": "说好不哭",
-        "artist": "周杰伦",
-        "genre": "流行",
-        "notes": "EMO",
+        "notes": "Emo",
         "is_paid": true
     }
 ] 
