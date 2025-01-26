@@ -86,5 +86,21 @@
         "notes": "",
         "is_paid": false,
         "order": 11
+    },
+    {
+        "title": "起点",
+        "artist": "姜云升/阿达娃",
+        "genre": "Rap",
+        "notes": "",
+        "is_paid": false,
+        "order": 12
+    },
+    {
+        "title": "Battle",
+        "artist": "姜云升",
+        "genre": "Rap",
+        "notes": "",
+        "is_paid": false,
+        "order": 13
     }
 ] 
