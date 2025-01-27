@@ -118,5 +118,37 @@
         "notes": "",
         "is_paid": false,
         "order": 15
+    },
+    {
+        "title": "真的没喝多",
+        "artist": "B2$/KOALA",
+        "genre": "Rap",
+        "notes": "",
+        "is_paid": false,
+        "order": 16
+    },
+    {
+        "title": "庆功酒",
+        "artist": "FOX胡天渝",
+        "genre": "Rap",
+        "notes": "",
+        "is_paid": false,
+        "order": 17
+    },
+    {
+        "title": "我不押了",
+        "artist": "OWEN欧阳子文",
+        "genre": "Rap",
+        "notes": "",
+        "is_paid": false,
+        "order": 18
+    },
+    {
+        "title": "艺术家",
+        "artist": "May田雨轩",
+        "genre": "Rap",
+        "notes": "",
+        "is_paid": false,
+        "order": 19
     }
 ]
