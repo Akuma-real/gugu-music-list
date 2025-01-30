@@ -150,5 +150,37 @@
         "notes": "",
         "is_paid": false,
         "order": 19
+    },
+    {
+        "title": "北派",
+        "artist": "辉子/秃子",
+        "genre": "Rap",
+        "notes": "",
+        "is_paid": false,
+        "order": 20
+    },
+    {
+        "title": "看月亮爬上来",
+        "artist": "张杰",
+        "genre": "流行",
+        "notes": "山歌版",
+        "is_paid": false,
+        "order": 21
+    },
+    {
+        "title": "美猴王",
+        "artist": "倒悬的橘子",
+        "genre": "Rap",
+        "notes": "",
+        "is_paid": false,
+        "order": 22
+    },
+    {
+        "title": "比巴卜",
+        "artist": "Credit",
+        "genre": "Rap",
+        "notes": "",
+        "is_paid": false,
+        "order": 23
     }
 ] 
